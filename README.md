@@ -1,5 +1,10 @@
 # Championship Manager 01/02 on macOS Using UTM and Windows XP
 
+> **Disclaimer**
+>
+> This guide uses **Windows XP** because it has historically been the most widely documented method for running Championship Manager 01/02 in UTM. However, before committing to a Windows XP installation, consider testing **Windows 7** first. Windows 7 has better compatibility with modern virtualization features, is easier to integrate with current versions of macOS (including file sharing), and may provide a smoother overall experience while still running CM 01/02 successfully. If Windows 7 works well for your setup, it is likely the better long-term choice. Windows XP remains a useful fallback if you encounter compatibility issues or prefer the classic environment.
+
+
 Install and update Championship Manager 01/02 on modern macOS systems using a Windows XP virtual machine running in UTM.
 
 This approach is:
@@ -34,10 +39,6 @@ Refer to UTM documentation for:
 * Creating a new virtual machine
 * Installing Windows XP
 * Configuring shared folders between macOS and Windows XP
-
-Add the following section after **Step 1: Install Windows XP in UTM**.
-
----
 
 ## Step 1.5: Configure File Sharing Between macOS and Windows XP
 
