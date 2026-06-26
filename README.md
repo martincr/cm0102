@@ -1,5 +1,3 @@
-# cm0102
-
 # Championship Manager 01/02 on macOS Using UTM and Windows XP
 
 Install and update Championship Manager 01/02 on modern macOS systems using a Windows XP virtual machine running in UTM.
