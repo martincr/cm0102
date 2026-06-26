@@ -37,6 +37,83 @@ Refer to UTM documentation for:
 * Installing Windows XP
 * Configuring shared folders between macOS and Windows XP
 
+Add the following section after **Step 1: Install Windows XP in UTM**.
+
+---
+
+## Step 1.5: Configure File Sharing Between macOS and Windows XP
+
+To install patches, data updates, and other files, it's useful to enable SMB file sharing between macOS and the Windows XP virtual machine. This approach is reliable for Windows XP and avoids the compatibility issues that can occur with newer UTM sharing methods. ([Lee Perry][1])
+
+### 1. Enable File Sharing in Windows XP
+
+1. Open **Network Connections**.
+2. Enable **File and Printer Sharing** on the network connection.
+3. Either:
+
+   * Allow File and Printer Sharing through the Windows Firewall, or
+   * Temporarily disable the Windows Firewall (simplest for an isolated VM).
+
+### 2. Change the UTM Network Mode
+
+1. Shut down the virtual machine.
+2. Open the VM settings in UTM.
+3. Change the network type from **VLAN** to **Shared Network**.
+4. Save the configuration and restart Windows XP. ([Lee Perry][1])
+
+### 3. Find the Windows XP IP Address
+
+Open **Command Prompt** and run:
+
+```text
+ipconfig
+```
+
+Note the IPv4 address (typically something like `192.168.xx.y`).
+
+### 4. Connect from macOS
+
+In Finder:
+
+1. Select **Go → Connect to Server…**
+2. Enter:
+
+```text
+smb://192.168.xx.y
+```
+
+Replace the address with the IP address obtained above.
+
+### 5. Authenticate
+
+Use:
+
+* **Username:** `Administrator`
+* **Password:** (leave blank unless you set one)
+
+IMPORTANT: This no longer seems to work with MacOS. Blank passwords are not accepted.
+
+### 6. Mount the Shared Folder
+
+Select **SharedDocs** when prompted.
+
+You can now drag and drop files between macOS and the Windows XP virtual machine using this shared folder. If the network disconnects, simply reconnect using **Go → Connect to Server…** in Finder. ([Lee Perry][1])
+
+### Notes
+
+* This method is ideal for transferring:
+
+  * Official patches
+  * Data updates
+  * Tactics
+  * Background image packs
+  * Save games
+* ISO files can still be mounted directly in UTM when appropriate.
+* Recent versions of UTM support SPICE WebDAV shared folders for newer Windows guests, but SMB networking is generally the most dependable option for Windows XP. ([UTM Documentation][2])
+
+[1]: https://prry.uk/2023-08-13-filesharing-between-a-windows-xp-virtual-machine-in-utm-and-macos?utm_source=chatgpt.com "Filesharing between a Windows XP Virtual Machine in UTM and MacOS - Lee Perry"
+[2]: https://docs.getutm.app/guest-support/windows/?utm_source=chatgpt.com "Windows | UTM Documentation"
+
 ## Step 2: Install Championship Manager 01/02
 
 1. Mount the CM0102 ISO inside Windows XP.
