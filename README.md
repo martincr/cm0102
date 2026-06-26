@@ -25,10 +25,10 @@ This approach is:
 ### Optional Updates
 
 * Official 3.9.68 Patch
-* Latest Data Update
+* Latest Data Update << I did not install this >>
 * Tactics Packs
-* Background Image Pack
-* Tapani Patch 2.22
+* Background Image Pack << I did not install this >>
+* Tapani Patch 2.22 << I did not install this >>
 
 ## Step 1: Install Windows XP in UTM
 
