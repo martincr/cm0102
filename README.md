@@ -1,16 +1,16 @@
-# Championship Manager 01/02 on macOS Using UTM and Windows XP
+# Championship Manager 01/02 on macOS Using UTM and Windows
 
 > **Disclaimer**
 >
-> This guide uses **Windows XP** because it has historically been the most widely documented method for running Championship Manager 01/02 in UTM. However, before committing to a Windows XP installation, consider testing **Windows 7** first. Windows 7 has better compatibility with modern virtualization features, is easier to integrate with current versions of macOS (including file sharing), and may provide a smoother overall experience while still running CM 01/02 successfully. If Windows 7 works well for your setup, it is likely the better long-term choice. Windows XP remains a useful fallback if you encounter compatibility issues or prefer the classic environment.
+> The original guide uses **Windows XP** because it has historically been the most widely documented method for running Championship Manager 01/02 in UTM. However, before committing to a Windows XP installation, consider testing **Windows 7** first. Windows 7 has better compatibility with modern virtualization features, is easier to integrate with current versions of macOS (including file sharing), and may provide a smoother overall experience while still running CM 01/02 successfully. If Windows 7 works well for your setup, it is likely the better long-term choice. Windows XP remains a useful fallback if you encounter compatibility issues or prefer the classic environment.
 
 
-Install and update Championship Manager 01/02 on modern macOS systems using a Windows XP virtual machine running in UTM.
+Install and update Championship Manager 01/02 on modern macOS systems using a Windows 7 virtual machine running in UTM.
 
 This approach is:
 
 * Free to use
-* Compatible with Apple Silicon Macs (M1/M2/M3/M4)
+* Compatible with Apple Silicon Macs (M1/M2/M3/M4) - I tested on an M3
 * A workaround for DirectX issues encountered with other installation methods
 * Compatible with data updates and popular community patches
 
@@ -19,28 +19,32 @@ This approach is:
 ### Software
 
 * UTM
-* Windows XP installation media
+* Windows 7 installation media
 * Championship Manager 01/02 ISO
 
 ### Optional Updates
 
 * Official 3.9.68 Patch
-* Latest Data Update << I did not install this >>
 * Tactics Packs
-* Background Image Pack << I did not install this >>
-* Tapani Patch 2.22 << I did not install this >>
+* Data Update (Not tested)
+* Background Image Pack (Not tested)
+* Tapani Patch 2.22 (Not tested)
 
 ## Step 1: Install Windows XP in UTM
 
-Create a Windows XP virtual machine in UTM and complete the operating system installation.
+Create a Windows 7 virtual machine in UTM and complete the operating system installation.
 
 Refer to UTM documentation for:
 
 * Creating a new virtual machine
-* Installing Windows XP
-* Configuring shared folders between macOS and Windows XP
+* Installing Windows 7
+* Configuring shared folders between macOS and Windows 7
 
 ## Step 1.5: Configure File Sharing Between macOS and Windows XP
+
+> **Disclaimer**
+>
+> The original guide required this. It's not required for Windows 7. Install the Windows Guest Tools instead and skip this step.
 
 To install patches, data updates, and other files, it's useful to enable SMB file sharing between macOS and the Windows XP virtual machine. This approach is reliable for Windows XP and avoids the compatibility issues that can occur with newer UTM sharing methods. ([Lee Perry][1])
 
@@ -115,10 +119,10 @@ You can now drag and drop files between macOS and the Windows XP virtual machine
 
 ## Step 2: Install Championship Manager 01/02
 
-1. Mount the CM0102 ISO inside Windows XP.
+1. Mount the CM0102 ISO inside Windows 7.
 2. Run the installer.
 3. Complete the installation using default options.
-4. Launch the game to verify that it works correctly.
+4. Launch the game using the GDI.exe version (C:\Program Files (x86)\Championship Manager 01-02\cm0102_GDI.exe) to verify that it works correctly. This is the windowed-mode executable located in the main game installation folder. It is needed to bypass DirectX resolution errors and force the game into windowed mode so it runs properly.
 
 ## Step 3: Apply Official Patch 3.9.68
 
@@ -126,7 +130,7 @@ Before installing any data updates, patch the game to version 3.9.68.
 
 1. Download the 3.9.68 patch.
 2. Run the patch installer inside Windows XP.
-3. Point the installer at your CM0102 installation directory.
+3. Point the installer at your CM01/02 installation directory.
 4. Complete the update.
 
 ## Step 4: Install Latest Data Update
