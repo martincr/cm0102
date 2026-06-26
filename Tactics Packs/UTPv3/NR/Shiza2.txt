@@ -1,0 +1,5 @@
+Tactic League Result:
+
+ TACTIC		  P    W    D    L    F    A   PTS
+
+ ------------    228  ---  --    --  ---   --  ---

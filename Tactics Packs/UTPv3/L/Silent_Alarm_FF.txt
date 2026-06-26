@@ -1,0 +1,9 @@
+Tactic League Result:
+
+ TACTIC		  P    W    D    L    F    A   PTS
+
+ Silent_Alarm_FF 228  191  27    10  569  119  600
+
+This test was carried out by Captain Fandango.
+
+You can check out the league at the champman0102.co.uk forums.

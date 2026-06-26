@@ -1,0 +1,17 @@
+# Ignore Windows Executables
+*.exe
+
+# Ignore Disk Images and ISOs
+*.iso
+
+# Ignore Compressed Archives
+*.zip
+
+# Ignore legacy Debian install
+Debian/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore UTM image and configuration files
+UTM/
